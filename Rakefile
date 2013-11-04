@@ -6,10 +6,10 @@ task :default => :spec
 
 desc "Expectativas de la clase Fraccion"
 task :spec do
-        sh "rspec -I. spec/frac_spec.rb"
+        sh "rspec -I. spec/spec_matriz.rb"
 end
 
 desc "Ejecutar con documentacion"
 task :doc do
-        sh "rspec -I. spec/frac_spec.rb --format documentation"
+        sh "rspec -I. spec/spec_matriz.rb --format documentation"
 end
