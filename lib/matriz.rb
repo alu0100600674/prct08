@@ -55,7 +55,7 @@ class Matriz
 
 
 
-        def + (m)
+        def +(m)
                 raise IndexError unless ((self.fil == m.fil) && (self.col == m.col)) #Las dimensiones tienes que ser iguales
 
                 suma = Matriz.new(self.fil, self.col)
@@ -70,8 +70,8 @@ class Matriz
         end
 
 
-        def - (m)
-                raise IndexError unless ((self.fil == m.fil) && (self.col == m.col))
+        def -(m)
+                raise IndexError unless ((self.fil == m.fil) && (self.col == m.col)) #Las dimensiones tienen que ser iguales
 
                 resta = Matriz.new(self.fil, self.col)
 
@@ -83,6 +83,26 @@ class Matriz
 
                 return resta
         end
+
+
+        def *(m)
+                raise IndexError unless (self.col == m.fil) #num de col de la primera tiene que ser igual a num de fil de lasegunda.
+
+                mult = Matriz.new(self.fil, m.col)
+
+                for i in (0...self.fil) 
+                        for j in (0...m.col)
+                                sum = self[i][0] * m[0][j]
+                                for k in (1...self.col)
+                                        sum += self[i][k] * m[k][j]
+                                end
+                                mult[i][j] = sum
+                        end
+                end  
+
+                return mult        
+        end
+
 
 
 end
