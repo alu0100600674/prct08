@@ -70,6 +70,19 @@ class Matriz
         end
 
 
+        def - (m)
+                raise IndexError unless ((self.fil == m.fil) && (self.col == m.col))
+
+                resta = Matriz.new(self.fil, self.col)
+
+                for i in (0...self.fil)
+                        for j in (0...self.col)
+                                resta[i][j] = self[i][j] - m[i][j]
+                        end
+                end  
+
+                return resta
+        end
 
 
 end

@@ -19,7 +19,8 @@ describe Matriz do
 	end
 	
 	it "Resta de matrices" do
-     
+		(@m.new(2,2,2,3,4,5) - @m.new(2,2,1)).should == @m.new(2,2,1,2,3,4)
+		(@m.new(3,3,-4) - @m.new(3,3,-4)).should == @m.new(3,3,0,0,0,0,0,0,0,0,0)     
 	end
 	
 	 it "Multiplicar matrices" do
