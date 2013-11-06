@@ -37,6 +37,41 @@ class Matriz
                 @datos[i]
         end
 
+
+
+        def == (m) #Comparacion de matrices para despues compararlas en el spec
+                raise IndexError unless ((self.fil == m.fil) && (self.col == m.col))
+
+                igual = true
+                for i in (0...self.fil)
+                        for j in (0...self.col)
+                                igual = false if (self[i][j] != m[i][j])
+                        end
+                end         
+
+                return igual
+        end
+
+
+
+
+        def + (m)
+                raise IndexError unless ((self.fil == m.fil) && (self.col == m.col))
+
+                suma = Matriz.new(self.fil, self.col)
+
+                for i in (0...self.fil)
+                        for j in (0...self.col)
+                                suma[i][j] = self[i][j] + m[i][j]
+                        end
+                end  
+
+                return suma                
+        end
+
+
+
+
 end
 
 m = Matriz.new(2,2)

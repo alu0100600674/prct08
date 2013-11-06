@@ -14,7 +14,8 @@ describe Matriz do
 	end
 	
 	it "Suma de matrices" do
-    
+		(@m.new(2,2,2) + @m.new(2,2,1)).should == @m.new(2,2,3)   
+		(@m.new(2,3,1,2,3,4,5,6) + @m.new(2,3,1)).should == @m.new(2,3,2,3,4,5,6,7)
 	end
 	
 	it "Resta de matrices" do
