@@ -40,7 +40,7 @@ class Matriz
 
 
         def == (m) #Comparacion de matrices para despues compararlas en el spec
-                raise IndexError unless ((self.fil == m.fil) && (self.col == m.col))
+                raise IndexError unless ((self.fil == m.fil) && (self.col == m.col)) #Las dimensiones tienen que ser iguales
 
                 igual = true
                 for i in (0...self.fil)
@@ -56,7 +56,7 @@ class Matriz
 
 
         def + (m)
-                raise IndexError unless ((self.fil == m.fil) && (self.col == m.col))
+                raise IndexError unless ((self.fil == m.fil) && (self.col == m.col)) #Las dimensiones tienes que ser iguales
 
                 suma = Matriz.new(self.fil, self.col)
 
@@ -87,6 +87,6 @@ class Matriz
 
 end
 
-m = Matriz.new(2,2)
-puts m.to_s
+#m = Matriz.new(2,2)
+#puts m.to_s
 
