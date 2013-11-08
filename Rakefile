@@ -9,7 +9,3 @@ task :spec do
         sh "rspec -I. spec/spec_matriz.rb"
 end
 
-desc "Ejecutar con documentacion"
-task :doc do
-        sh "rspec -I. spec/spec_matriz.rb --format documentation"
-end
