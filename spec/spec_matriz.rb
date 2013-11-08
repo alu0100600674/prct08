@@ -24,7 +24,8 @@ describe Matriz do
 		it "Suma de matrices" do
 			(@m.new(2,2,2) + @m.new(2,2,1)).should == @m.new(2,2,3)   
 			(@m.new(2,3,1,2,3,4,5,6) + @m.new(2,3,1)).should == @m.new(2,3,2,3,4,5,6,7)
-			#Modificación
+		end
+		it "Suma de matrices en forma de fraccion" do
 			(@m.new(2,2, @f.new(1,2), @f.new(1,3), @f.new(1,4), @f.new(1,5)) + @m.new(2,2, @f.new(1,2), @f.new(2,3), @f.new(3,4), @f.new(4,5))).should == @m.new(2,2,@f.new(1,1))
 		end
 	
@@ -36,7 +37,8 @@ describe Matriz do
 		it "Multiplicar matrices" do
 	 		(@m.new(2,2,1,2,3,4) * @m.new(2,2,1,0,0,1)).should == @m.new(2,2,1,2,3,4)
 			(@m.new(2,2,2,3,4,5) * @m.new(2,3,2)).should == @m.new(2,3,10,10,10,18,18,18)
-			#Modificación
+		end
+		it "Multiplicar matrices en forma de fraccion" do
 			(@m.new(2,2, @f.new(1,2), @f.new(1,3), @f.new(1,4), @f.new(1,5)) * @m.new(2,2, @f.new(1,2), @f.new(2,3), @f.new(3,4), @f.new(4,5))).should == @m.new(2,2,@f.new(1,2), @f.new(3,5), @f.new(11,40), @f.new(49,150))
 		end
 
